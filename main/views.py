@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Product
+
+def product_list(request):
+    products = Product.objects.all()  # Mengambil semua produk dari database
+    return render(request, 'main/product_list.html', {'products': products})
 
 def show_info(request):
-    return HttpResponse("Aplikasi: CutesyBoutique<br>Nama: Nisrina Kamilya<br>Kelas: PBP A")
+    return render(request, 'main/info.html')
