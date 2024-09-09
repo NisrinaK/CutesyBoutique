@@ -7,3 +7,6 @@ def product_list(request):
 
 def show_info(request):
     return render(request, 'main/info.html')
+
+def home(request):
+    return render(request, 'main/home.html')
