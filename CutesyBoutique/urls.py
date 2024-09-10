@@ -20,7 +20,7 @@ from main import views  # Import views from the 'main' app
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('info/', views.show_info, name='show_info'),
-    path('products/', views.product_list, name='product_list'),
+    #path('info/', views.show_info, name='show_info'),
+    #path('products/', views.product_list, name='product_list'),
     path('', views.home, name='home'),  # Add this line to handle the empty path
 ]
