@@ -1,7 +1,22 @@
-1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
--Pertama saya membuat repositori baru dengan nama CutesyBoutique, lalu menambahkan file .gitignore untuk Python agar file virtual environment tidak di-commit
--
+Link Deploy PWS: http://nisrina-kamilya-cutesyboutique.pbp.cs.ui.ac.id/
 
+1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+-Pertama, saya membuat folder CutesyBoutique.
+-Saya menginisialisasi virtual environment dengan nama venv (berguna untuk menyimpan library yang saya instal).
+-Membuat file .gitignore untuk memastikan venv dan cache Python tidak di-push ke GitHub.
+-Membuat requirements.txt untuk mendokumentasikan library yang ada di venv (di GitHub, ini berguna untuk memberitahu orang lain tentang dependensi proyek).
+-Menginstal library dari requirements.txt.
+-Menjalankan perintah "django-admin startproject CutesyBoutique ." untuk membuat proyek Django. Titik di akhir perintah memastikan proyek dibuat di folder ini tanpa membuat folder baru.
+-Menjalankan perintah "python manage.py startapp main" untuk membuat aplikasi main, yang dalam proyek ini digunakan untuk menampilkan dan mendaftarkan produk.
+-Mem-push progres ke GitHub dan PWS, lalu menambahkan allowed host agar bisa diakses secara lokal maupun melalui tautan PWS.
+-Menghubungkan proyek dengan aplikasi main dengan menambahkan "main" ke INSTALLED_APPS dan memasukkan path('', include('main.urls')) ke dalam urlpatterns agar Django dapat mengakses urls.py di aplikasi main (meskipun pada tahap ini urls.py belum ada).
+-Menambahkan BASE_DIR / "templates" untuk memastikan template main dapat meng-extend template base.html.
+-Membuat urls.py di dalam aplikasi main untuk memetakan tampilan utama proyek dengan views.py.
+-Membuat model sesuai dengan ketentuan, dan melakukan migrasi untuk memperbarui bentuk database.
+-Membuat folder templates yang berisi file .html untuk tampilan web.
+-Mengembangkan views.py untuk mengubah tampilan html agar dinamis, tidak statis.
+-Membuat forms.py untuk merekam input yang nantinya akan disimpan ke database.
+-Menjalankan server.
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
    ![S__37502985](https://github.com/user-attachments/assets/8e904cd8-6f58-406d-8371-6efe5baadfd9)
