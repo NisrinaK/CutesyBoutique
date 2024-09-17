@@ -35,23 +35,25 @@ def show_home(request):
     return render(request, "home.html", context)
 
 # XML
-def product_xml(request):
-    products = Product.objects.all()
-    data = serializers.serialize('xml', products)
-    return HttpResponse(data, content_type='application/xml')
+def show_xml(request):
+    product = Product.objects.all()
 
-def product_xml_by_id(request, id):
-    product = Product.objects.filter(id=id)
-    data = serializers.serialize('xml', product)
-    return HttpResponse(data, content_type='application/xml')
+def show_xml(request):
+    product = Product.objects.all()
+    return HttpResponse(serializers.serialize("xml", product), content_type="application/xml")
 
 # JSON
-def product_json(request):
-    products = Product.objects.all()
-    data = serializers.serialize('json', products)
-    return HttpResponse(data, content_type='application/json')
+def show_json(request):
+    product = Product.objects.all()
 
-def product_json_by_id(request, id):
-    product = Product.objects.filter(id=id)
-    data = serializers.serialize('json', product)
-    return HttpResponse(data, content_type='application/json')
+def show_json(request):
+    product = Product.objects.all()
+    return HttpResponse(serializers.serialize("json", product), content_type="application/json")
+
+def show_xml_by_id(request, id):
+    product = Product.objects.filter(pk=id)
+    return HttpResponse(serializers.serialize("xml", product), content_type="application/xml")
+
+def show_json_by_id(request, id):
+    product = Product.objects.filter(pk=id)
+    return HttpResponse(serializers.serialize("json", product), content_type="application/json")
