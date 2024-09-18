@@ -4,47 +4,47 @@
     <title>Beranda - CutesyBoutique</title>
 </head>
     <body>
-        <h1 align="center">Welcome to CutesyBoutique!</h1>
-        <h1 align="center">˖ ݁𖥔 ݁˖   𐙚   ˖ ݁𖥔 ݁˖ ˖ ݁𖥔 ݁˖   𐙚   ˖ ݁𖥔 ݁˖</h1>
-        <p>Nama: Nisrina Kamilya Nisyya</p>
-        <p>NPM: 2306275456</p>
-        <p>Kelas: PBP A</p>
-        <p>CutesyBoutique adalah toko fashion yang mengkhususkan diri dalam menyediakan koleksi pakaian dan aksesori yang lucu, trendi, dan penuh gaya untuk wanita dan remaja putri. 
-            Toko ini berkomitmen untuk menghadirkan produk-produk berkualitas tinggi dengan harga yang terjangkau, sehingga setiap pelanggan bisa tampil memukau dan percaya diri. 
-            Baik Anda mencari pakaian untuk acara spesial atau sekadar ingin memperbarui koleksi sehari-hari, CutesyBoutique adalah destinasi fashion yang sempurna untuk menemukan item-item yang sesuai dengan gaya pribadi Anda!</p>
-        
+    <h1 align="center">Welcome to CutesyBoutique!</h1>
+    <h1 align="center">˖ ݁𖥔 ݁˖   𐙚   ˖ ݁𖥔 ݁˖ ˖ ݁𖥔 ݁˖   𐙚   ˖ ݁𖥔 ݁˖</h1>
+    <p>Nama: Nisrina Kamilya Nisyya</p>
+    <p>NPM: 2306275456</p>
+    <p>Kelas: PBP A</p>
+    <p>CutesyBoutique adalah toko fashion yang mengkhususkan diri dalam menyediakan koleksi pakaian dan aksesori yang lucu, trendi, dan penuh gaya untuk wanita dan remaja putri. 
+        Toko ini berkomitmen untuk menghadirkan produk-produk berkualitas tinggi dengan harga yang terjangkau, sehingga setiap pelanggan bisa tampil memukau dan percaya diri. 
+        Baik Anda mencari pakaian untuk acara spesial atau sekadar ingin memperbarui koleksi sehari-hari, CutesyBoutique adalah destinasi fashion yang sempurna untuk menemukan item-item yang sesuai dengan gaya pribadi Anda!</p>
+    
 
-        <h1>Tambah Produk Baru!</h1>
-        <h1>───୨ৎ────୨ৎ───</h1>
-        <a href="{% url 'main:add_product' %}">
-            <button>Add Product</button>
-        </a>
+    <h1>Tambah Produk Baru!</h1>
+    <h1>───୨ৎ────୨ৎ───</h1>
+    <a href="{% url 'main:add_product' %}">
+        <button>Add Product</button>
+      </a>
 
-        <h1>Lihat Produk Kami!</h1>
-        <h1>───୨ৎ────୨ৎ───</h1>
+    <h1>Lihat Produk Kami!</h1>
+    <h1>───୨ৎ────୨ৎ───</h1>
 
-        {% if not product %}
+    {% if not products %}
         <p>Belum ada produk yang tersedia.</p>
-        {% else %}
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Deskripsi</th>
-                <th>Harga</th>
-                <th>Ukuran</th>
-                <th>stock</th>
-            </tr>
-        
-            {% for products in product %}
-            <tr>
-                <td>{{ products.name }}</td>
-                <td>Deskripsi: {{ products.description }}</td>
-                <td>Harga: Rp {{ products.price }}</td>
-                <td>Ukuran: {{ products.size }}</td>
-                <td>Stok: {{ products.stock }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-        {% endif %}
+    {% else %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Deskripsi</th>
+            <th>Harga</th>
+            <th>Ukuran</th>
+            <th>stock</th>
+        </tr>
+    
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>Deskripsi: {{ product.description }}</td>
+            <td>Harga: Rp {{ product.price }}</td>
+            <td>Ukuran: {{ product.size }}</td>
+            <td>Stok: {{ product.stock }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
     </body>
 </html>

@@ -29,30 +29,25 @@ def show_home(request):
         'size': 'PBP E',
         'price': 'PBP E',
         'stock': 'PBP E',
-        'product' : products,
+        'products' : products,
     }
 
     return render(request, "home.html", context)
 
 # XML
-def show_xml(request):
-    product = Product.objects.all()
 
 def show_xml(request):
     product = Product.objects.all()
+    return HttpResponse(serializers.serialize("xml", product), content_type="application/xml")
+
+def show_xml_by_id(request, id):
+    product = Product.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("xml", product), content_type="application/xml")
 
 # JSON
 def show_json(request):
     product = Product.objects.all()
-
-def show_json(request):
-    product = Product.objects.all()
     return HttpResponse(serializers.serialize("json", product), content_type="application/json")
-
-def show_xml_by_id(request, id):
-    product = Product.objects.filter(pk=id)
-    return HttpResponse(serializers.serialize("xml", product), content_type="application/xml")
 
 def show_json_by_id(request, id):
     product = Product.objects.filter(pk=id)
