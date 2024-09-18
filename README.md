@@ -1,5 +1,15 @@
-Link Deploy PWS: http://nisrina-kamilya-cutesyboutique.pbp.cs.ui.ac.id/
+# ⚙️ **USAGE**<br>
+You can access the live web application directly from the link below:
+[LINK TO WEBPAGE](http://nisrina-kamilya-cutesyboutique.pbp.cs.ui.ac.id/)
 
+<br>
+
+# 📝 **ASSIGNMENT**<br>
+**Name** : Nisrina Kamilya Nisyya <br>
+**NPM** : 2306275456 <br>
+**Class** : PBP A
+
+## **TUGAS 2**<br>
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 -Pertama, saya membuat folder CutesyBoutique.
 -Saya menginisialisasi virtual environment dengan nama venv (berguna untuk menyimpan library yang saya instal).
@@ -36,20 +46,22 @@ Link Deploy PWS: http://nisrina-kamilya-cutesyboutique.pbp.cs.ui.ac.id/
 
 
 
+# 📝 **ASSIGNMENT**<br>
+**Name** : Nisrina Kamilya Nisyya <br>
+**NPM** : 2306275456 <br>
+**Class** : PBP A
 
-Tugas 3 Readme
+## **TUGAS 3**<br>
 
-Menjawab beberapa pertanyaan berikut pada README.md pada root folder.
+1. Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform? Data delivery adalah elemen penting dalam pengoperasian sebuah platform karena mendukung pertukaran data yang efisien, interaksi real-time, keamanan, sinkronisasi, dan pengalaman pengguna yang lancar. Tanpa sistem data delivery yang baik, platform akan kesulitan dalam memberikan layanan yang optimal dan responsif kepada penggunanya.
 
-Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform? Data delivery adalah elemen penting dalam pengoperasian sebuah platform karena mendukung pertukaran data yang efisien, interaksi real-time, keamanan, sinkronisasi, dan pengalaman pengguna yang lancar. Tanpa sistem data delivery yang baik, platform akan kesulitan dalam memberikan layanan yang optimal dan responsif kepada penggunanya.
+2. Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML? Menurut Saya, JSON lebih baik dibandingkan dengan XML, dikarnakan JSON lebih sederhana dan lebih fleksibel . XML lebih kompleks dan kurang fleksibel. JSON mendukung angka, objek, string, dan array Boolean. XML mendukung semua tipe data JSON dan tipe tambahan seperti Boolean, tanggal, gambar, dan namespace.
 
-Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML? Menurut Saya, JSON lebih baik dibandingkan dengan XML, dikarnakan JSON lebih sederhana dan lebih fleksibel . XML lebih kompleks dan kurang fleksibel. JSON mendukung angka, objek, string, dan array Boolean. XML mendukung semua tipe data JSON dan tipe tambahan seperti Boolean, tanggal, gambar, dan namespace.
+3. Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut? Method is_valid() pada form Django digunakan untuk memvalidasi data yang dikirimkan melalui form. Fungsinya adalah untuk memastikan bahwa data yang dimasukkan pengguna sesuai dengan aturan yang telah ditetapkan dalam form.
 
-Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut? Method is_valid() pada form Django digunakan untuk memvalidasi data yang dikirimkan melalui form. Fungsinya adalah untuk memastikan bahwa data yang dimasukkan pengguna sesuai dengan aturan yang telah ditetapkan dalam form.
+4. Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang? csrf_token diperlukan untuk melindungi aplikasi Django dari serangan CSRF yang dapat menyebabkan eksekusi permintaan berbahaya tanpa izin pengguna. Tanpa csrf_token, aplikasi rentan terhadap penyalahgunaan kredensial atau sesi pengguna, yang dapat digunakan oleh penyerang untuk melakukan tindakan yang tidak sah atas nama pengguna.
 
-Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang? csrf_token diperlukan untuk melindungi aplikasi Django dari serangan CSRF yang dapat menyebabkan eksekusi permintaan berbahaya tanpa izin pengguna. Tanpa csrf_token, aplikasi rentan terhadap penyalahgunaan kredensial atau sesi pengguna, yang dapat digunakan oleh penyerang untuk melakukan tindakan yang tidak sah atas nama pengguna.
-
-Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 
 
@@ -57,5 +69,11 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-b
 ![Screenshot 2024-09-18 062827](https://github.com/user-attachments/assets/acfb61c2-531c-4971-8777-485f29d0604e)
 
 ![Screenshot 2024-09-18 062846](https://github.com/user-attachments/assets/82ec8fc2-2088-4e56-980d-997107d3b5fe)
+
+![Screenshot 2024-09-18 071744](https://github.com/user-attachments/assets/7c6b7517-bf59-443e-b881-679aca80c614)
+
+![Screenshot 2024-09-18 071804](https://github.com/user-attachments/assets/97fdcb34-c3c5-40bb-90da-f297b6c90185)
+
+
 
 
