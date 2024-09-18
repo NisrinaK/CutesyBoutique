@@ -58,4 +58,10 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-b
 
 ![Screenshot 2024-09-18 062846](https://github.com/user-attachments/assets/82ec8fc2-2088-4e56-980d-997107d3b5fe)
 
+![Screenshot 2024-09-18 071744](https://github.com/user-attachments/assets/7c6b7517-bf59-443e-b881-679aca80c614)
+
+![Screenshot 2024-09-18 071804](https://github.com/user-attachments/assets/97fdcb34-c3c5-40bb-90da-f297b6c90185)
+
+
+
 
