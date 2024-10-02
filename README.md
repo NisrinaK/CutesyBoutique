@@ -110,3 +110,52 @@ Menampilkan Detail Pengguna yang Logged In dan Menggunakan Cookies Last Login:
 
 Di halaman utama, saya menampilkan detail informasi pengguna yang sedang login, seperti username, dengan menggunakan request.user.username. Selain itu, saya menambahkan cookie bernama last_login saat pengguna login. Cookie ini menyimpan waktu login terakhir pengguna, dan ditampilkan di halaman utama setiap kali mereka login.
 Ketika pengguna logout, cookie last_login akan dihapus untuk menjaga konsistensi data.
+
+
+# 📝 **ASSIGNMENT**<br>
+**Name** : Nisrina Kamilya Nisyya <br>
+**NPM** : 2306275456 <br>
+**Class** : PBP A
+
+## **TUGAS 5**<br>
+
+1. Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+Ketika sebuah elemen HTML memiliki beberapa CSS selector yang diterapkan padanya, urutan prioritas (specificity) dari CSS selector tersebut dihitung berdasarkan aturan berikut:
+- Inline Styles (misalnya, style="..." di dalam tag HTML) memiliki prioritas tertinggi.
+- ID Selector (misalnya, #header) memiliki prioritas yang lebih tinggi dibandingkan class atau elemen selector.
+- Class, Pseudo-class, dan Attribute Selector (misalnya, .class, :hover, [type="text"]) berada di bawah ID selector.
+- Type Selector dan Pseudo-element Selector (misalnya, div, p, ::before) memiliki prioritas yang lebih rendah.
+- Universal Selector (*), combinator (+, >, ~), dan negasi (:not()) memiliki prioritas terendah.
+- Jika selector memiliki specificity yang sama, urutan penulisan di dalam stylesheet akan menentukan prioritas (yang terakhir ditulis akan diambil).
+- Deklarasi menggunakan !important akan mengesampingkan prioritas selector, tetapi tetap mengikuti aturan spesifik lainnya.
+
+2. Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+Responsive design penting karena perangkat yang mengakses aplikasi web beragam (desktop, tablet, ponsel), dan setiap perangkat memiliki ukuran layar serta orientasi yang berbeda. Konsep ini memungkinkan tampilan web menyesuaikan secara dinamis agar user experience tetap optimal di berbagai perangkat.
+
+-Contoh aplikasi yang menerapkan responsive design: YouTube. YouTube secara otomatis menyesuaikan tampilan videonya tergantung pada ukuran layar, baik itu di desktop, tablet, atau smartphone.
+-Contoh aplikasi yang belum menerapkan responsive design: Sebuah situs web lama tanpa media queries yang tampilan desktopnya tidak disesuaikan untuk layar ponsel, seperti situs berbasis tabel tanpa fleksibilitas tata letak.
+
+3. Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+-Margin: Jarak antara batas luar elemen dan elemen di sekitarnya. Margin tidak memengaruhi ukuran elemen itu sendiri, hanya jarak antar elemen.
+-Border: Garis pembatas di sekitar elemen yang berada di antara padding dan margin. Border dapat memiliki lebar, gaya, dan warna.
+-Padding: Ruang antara konten elemen dan batas dalam elemen (border). Padding memengaruhi ukuran total elemen karena menambah ruang di dalam elemen itu sendiri.
+
+4. Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+-Flexbox: Layout yang dirancang untuk menyusun elemen dalam satu dimensi (baris atau kolom). Flexbox sangat efektif untuk mengatur item di dalam wadah yang fleksibel dan responsif, seperti membangun layout navigasi atau galeri foto yang fleksibel.
+-Grid Layout: Layout yang bekerja dalam dua dimensi (baris dan kolom). Ini digunakan untuk membuat layout yang lebih kompleks dengan pengaturan area di grid seperti membuat dashboard atau tata letak halaman yang multi-kolom.
+Flexbox sangat berguna untuk menyusun item yang dinamis secara linier, sedangkan grid layout ideal untuk struktur tata letak yang lebih statis dan dua dimensi.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+Hal pertama yang saya lakukan adalah menambahkan Tailwind CSS ke dalam aplikasi agar saya bisa melakukan styling secara lebih mudah dan efisien pada tampilan aplikasi CutesyBoutique. Tailwind memudahkan saya untuk mengatur berbagai elemen seperti grid, padding, dan shadow tanpa harus menulis banyak CSS manual.
+
+Selanjutnya, saya membuat view di views.py untuk menangani permintaan pengeditan produk. Di sini, saya membuat template HTML yang berisi form pengeditan produk, lalu saya menggunakan data produk yang ingin diedit dan menampilkannya dalam form tersebut. Pada form ini, saya menggunakan method POST agar data yang baru dapat langsung disimpan ke database setelah pengeditan dilakukan. Saya juga menambahkan tombol "Edit" di setiap card produk yang mengarahkan pengguna ke halaman edit produk.
+
+Untuk fitur penghapusan produk, saya membuat view tambahan di views.py yang khusus menangani permintaan penghapusan produk. Agar pengguna dapat menghapus produk dengan aman, saya menggunakan link konfirmasi di halaman daftar produk atau melalui modals. Saya juga menambahkan tombol "Delete" pada setiap card produk sehingga pengguna dapat langsung menghapus produk dengan mudah.
+
+Dalam mengatur tampilan form login dan register, saya memanfaatkan Tailwind CSS untuk mengatur layout dan gaya agar lebih menarik. Pada halaman tambah produk, saya mendesain form agar terlihat lebih rapi. Saya juga menambahkan elemen visual seperti ikon dan warna pada input fields agar pengguna merasa lebih nyaman saat menambahkan produk baru.
+
+Ketika tidak ada produk yang tersimpan di database, saya memastikan untuk mengeceknya di view terlebih dahulu. Jika tidak ada produk, saya menampilkan gambar ilustrasi atau emoji sedih dengan pesan "Belum ada produk yang terdaftar." Tampilan ini saya atur agar tetap menarik dan responsif menggunakan Tailwind CSS.
+
+Jika produk sudah ada, saya membuat tampilan daftar produk menggunakan desain card yang berbeda dari tutorial. Setiap card produk menampilkan nama, deskripsi singkat, harga, serta stok yang tersedia. Saya juga menambahkan tombol edit dan delete di setiap card produk agar pengguna dapat langsung melakukan aksi terhadap produk tersebut. Untuk menjaga keselarasan tema CutesyBoutique, saya menggunakan padding, shadow, border-radius, serta warna-warna lembut seperti pink untuk latar belakang card. Selain itu, saya mengimplementasikan grid yang responsif agar produk tetap tersusun rapi meskipun dilihat pada layar yang lebih kecil.
+
+Terakhir, saya mengimplementasikan navigasi bar menggunakan Tailwind CSS. Pada navigasi bar ini, saya menambahkan link untuk mengarahkan pengguna ke halaman Home, Products, Categories, dan Cart.
