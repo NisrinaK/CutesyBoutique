@@ -1,0 +1,44 @@
+.form-style form input,
+.form-style form textarea,
+.form-style form select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid #f0a3c7; /* Warna border soft pink */
+    border-radius: 0.5rem; /* Membuat sudut lebih bulat */
+    background-color: #fff0f6; /* Latar belakang yang lembut */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transisi lembut */
+}
+
+.form-style form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #ff6f91; /* Warna border saat fokus lebih cerah */
+    box-shadow: 0 0 0 3px rgba(255, 111, 145, 0.5); /* Efek bayangan lembut */
+}
+
+@keyframes shine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.animate-shine {
+    background: linear-gradient(120deg, rgba(255, 204, 229, 0.5), rgba(255, 153, 204, 0.3) 50%, rgba(255, 204, 229, 0.5)); /* Gradient pink yang lembut */
+    background-size: 200% 100%;
+    animation: shine 3s infinite;
+}
+
+/* Tambahan untuk memberi gaya pada tombol */
+.form-style button {
+    background-color: #ff6f91; /* Warna tombol pink cerah */
+    color: white; /* Teks putih untuk kontras */
+    border: none; /* Menghilangkan border */
+    padding: 0.5rem 1rem; /* Padding tombol */
+    border-radius: 0.5rem; /* Sudut tombol yang bulat */
+    cursor: pointer; /* Mengubah kursor menjadi pointer */
+    transition: background-color 0.3s; /* Transisi saat hover */
+}
+
+.form-style button:hover {
+    background-color: #ff4d80; /* Warna tombol saat hover */
+}

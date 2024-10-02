@@ -1,57 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'navbar.html' %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Beranda - CutesyBoutique</title>
+    <style>
+        body {
+            background-color: #ffffff; /* Soft pink background */
+            color: #333; /* Dark gray text for contrast */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #d5006d; /* Warna teks */
+            font-size: 3rem; /* Ukuran font lebih besar */
+            margin: 0.5rem 0;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7), 0 0 25px rgba(213, 0, 109, 0.8); /* Shadow yang lebih dramatis */
+            animation: bounce 2s infinite; /* Animasi bounce */
+        }
+        /* Menambahkan efek animasi */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0); /* Posisi awal */
+            }
+            40% {
+                transform: translateY(-10px); /* Bergerak naik */
+            }
+            60% {
+                transform: translateY(-5px); /* Bergerak sedikit naik */
+            }
+        }
+        h2 {
+            color: #d5006d; /* Consistent header color */
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin: 0.5rem 0;
+            padding: 0 10%;
+        }
+        /* Container yang membungkus card */
+        .info-container {
+            display: flex;
+            justify-content: center; /* Center secara horizontal */
+            align-items: center; /* Center secara vertikal */
+            gap: 20px; /* Jarak antar card */
+            flex-wrap: wrap; /* Agar card responsif */
+            padding: 20px; /* Padding untuk jarak dari tepi */
+        }
+        /* Styling card */
+        .card-container {
+            max-width: 250px;
+            background: linear-gradient(135deg, #f8bbd0, #d5006d);
+            border-radius: 20px;
+            border: 2px solid #d5006d;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .card-container:hover {
+            transform: scale(1.05);
+        }
+        button {
+            background-color: #f1a7b9; /* Light pink buttons */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px; /* Rounded buttons */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 5px;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for buttons */
+        }
+        button:hover {
+            background-color: #f48fb1; /* Darker pink on hover */
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-    <body>
-    <h1 align="center">Welcome to CutesyBoutique!</h1>
-    <h1 align="center">˖ ݁𖥔 ݁˖   𐙚   ˖ ݁𖥔 ݁˖ ˖ ݁𖥔 ݁˖   𐙚   ˖ ݁𖥔 ݁˖</h1>
-    <p>Nama: Nisrina Kamilya Nisyya</p>
-    <p>NPM: 2306275456</p>
-    <p>Kelas: PBP A</p>
-    <p>CutesyBoutique adalah toko fashion yang mengkhususkan diri dalam menyediakan koleksi pakaian dan aksesori yang lucu, trendi, dan penuh gaya untuk wanita dan remaja putri. 
-        Toko ini berkomitmen untuk menghadirkan produk-produk berkualitas tinggi dengan harga yang terjangkau, sehingga setiap pelanggan bisa tampil memukau dan percaya diri. 
-        Baik Anda mencari pakaian untuk acara spesial atau sekadar ingin memperbarui koleksi sehari-hari, CutesyBoutique adalah destinasi fashion yang sempurna untuk menemukan item-item yang sesuai dengan gaya pribadi Anda!</p>
-    
+<body>
+    <div style="margin-top: 100px;"> <!-- Added margin to move content down -->
+        <h1>Welcome to CutesyBoutique!</h1>
+        <h2>˖ ݁𖥔 ݁˖   𐙚   ˖ ݁𖥔 ݁˖ ˖ ݁𖥔 ݁˖   𐙚   ˖ ݁𖥔 ݁˖</h2>
 
-    <h1>Tambah Produk Baru!</h1>
-    <h1>───୨ৎ────୨ৎ───</h1>
-    <a href="{% url 'main:add_product' %}">
-        <button>Add Product</button>
-      </a>
+        <!-- Info Cards -->
+        <div class="info-container flex justify-center space-x-4">
+            <div class="card-container">
+                {% include 'card_info.html' with title='Nama' value='Nisrina Kamilya Nisyya' %}
+            </div>
+            <div class="card-container">
+                {% include 'card_info.html' with title='NPM' value='2306275456' %}
+            </div>
+            <div class="card-container">
+                {% include 'card_info.html' with title='Kelas' value='PBP A' %}
+            </div>
+        </div>
 
-    <h1>Lihat Produk Kami!</h1>
-    <h1>───୨ৎ────୨ৎ───</h1>
+        <p>CutesyBoutique adalah toko fashion yang mengkhususkan diri dalam menyediakan koleksi pakaian dan aksesori yang lucu, trendi, dan penuh gaya untuk wanita dan remaja putri. 
+            Toko ini berkomitmen untuk menghadirkan produk-produk berkualitas tinggi dengan harga yang terjangkau, sehingga setiap pelanggan bisa tampil memukau dan percaya diri. 
+            Baik Anda mencari pakaian untuk acara spesial atau sekadar ingin memperbarui koleksi sehari-hari, CutesyBoutique adalah destinasi fashion yang sempurna untuk menemukan item-item yang sesuai dengan gaya pribadi Anda!
+        </p>
 
-    {% if not products %}
-        <p>Belum ada produk yang tersedia.</p>
-    {% else %}
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Deskripsi</th>
-            <th>Harga</th>
-            <th>Ukuran</th>
-            <th>stock</th>
-        </tr>
-    
-        {% for product in products %}
-        <tr>
-            <td>{{ product.name }}</td>
-            <td>Deskripsi: {{ product.description }}</td>
-            <td>Harga: Rp {{ product.price }}</td>
-            <td>Ukuran: {{ product.size }}</td>
-            <td>Stok: {{ product.stock }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
+        <h1>Tambah Produk Baru!</h1>
+        <h2>───୨ৎ────୨ৎ───</h2>
+        <a href="{% url 'main:add_product' %}">
+            <button>Add Product</button>
+        </a>
 
-    <a href="{% url 'main:logout' %}">
-        <button>Logout</button>
-      </a>
-    
-      <h5>Sesi terakhir login: {{ last_login }}</h5>
-      
-    </body>
+        <h1>Lihat Produk Kami!</h1>
+        <h2>───୨ৎ────୨ৎ───</h2>
+
+        {% if not products %}
+            <div class="flex flex-col items-center justify-center mt-10">
+                <img src="{% static 'image/sedih-banget.png' %}" alt="Sad face" class="w-48 h-auto mb-10" />
+                <p class="text-lg font-semibold">Belum ada produk yang tersedia!</p>
+            </div>
+        {% else %}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1">
+                {% for product in products %}
+                    {% include 'card_product.html' with product=product %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <a href="{% url 'main:logout' %}">
+            <button>Logout</button>
+        </a>
+
+        <h5>Sesi terakhir login: {{ last_login }}</h5>
+    </div>
+</body>
 </html>
+
+{% endblock content %}

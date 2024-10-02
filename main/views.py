@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product
 from .forms import ProductForm
 from django.http import HttpResponse
@@ -27,18 +27,18 @@ def add_product(request):
     if form.is_valid() and request.method == "POST":
         product = form.save(commit=False)
         product.user = request.user
-        product.save() #form.save()
+        product.save()
         return redirect("main:show_home")
 
     context = {'form': form}
-    return render(request, "add_product.html", context) #'main/add_product.html'
+    return render(request, "add_product.html", context)
 
 @login_required(login_url='/login')
 def show_home(request):
-    products = Product.objects.filter(user=request.user) #products = Product.objects.all()
+    products = Product.objects.filter(user=request.user)
     context = {
         'barang' : '2323061456',
-        'descripsion': 'Pak Bepe',
+        'description': 'Pak Bepe',
         'size': 'PBP E',
         'price': 'PBP E',
         'stock': 'PBP E',
@@ -100,3 +100,19 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))  # Mengarahkan kembali ke halaman login setelah logout
     response.delete_cookie('last_login')  # Menghapus cookie last_login
     return response
+
+def edit_product(request, id):
+    product = Product.objects.get(id=id)
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return redirect('main:show_home')
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+
+def delete_product(request, id):
+    product = Product.objects.get(id=id)
+    product.delete()
+    return HttpResponseRedirect(reverse('main:show_home'))
