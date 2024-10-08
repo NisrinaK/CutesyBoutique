@@ -159,3 +159,38 @@ Ketika tidak ada produk yang tersimpan di database, saya memastikan untuk mengec
 Jika produk sudah ada, saya membuat tampilan daftar produk menggunakan desain card yang berbeda dari tutorial. Setiap card produk menampilkan nama, deskripsi singkat, harga, serta stok yang tersedia. Saya juga menambahkan tombol edit dan delete di setiap card produk agar pengguna dapat langsung melakukan aksi terhadap produk tersebut. Untuk menjaga keselarasan tema CutesyBoutique, saya menggunakan padding, shadow, border-radius, serta warna-warna lembut seperti pink untuk latar belakang card. Selain itu, saya mengimplementasikan grid yang responsif agar produk tetap tersusun rapi meskipun dilihat pada layar yang lebih kecil.
 
 Terakhir, saya mengimplementasikan navigasi bar menggunakan Tailwind CSS. Pada navigasi bar ini, saya menambahkan link untuk mengarahkan pengguna ke halaman Home, Products, Categories, dan Cart.
+
+
+# 📝 **ASSIGNMENT**<br>
+**Name** : Nisrina Kamilya Nisyya <br>
+**NPM** : 2306275456 <br>
+**Class** : PBP A
+
+## **TUGAS 6**<br>
+
+1.  Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+JavaScript memberikan interaktivitas dan dinamisme pada aplikasi web. Ini memungkinkan pengembang untuk memanipulasi elemen HTML, menangani event pengguna (seperti klik atau input), dan mengupdate konten halaman tanpa harus me-refresh seluruh halaman (seperti dengan AJAX). Selain itu, JavaScript dapat digunakan di frontend dan backend (dengan Node.js), memungkinkan pengembangan full-stack menggunakan satu bahasa.
+
+2. Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?
+await digunakan untuk menunggu penyelesaian operasi asynchronous. Ketika kita menggunakan fetch(), kita melakukan permintaan jaringan (network request) yang bersifat asynchronous. Dengan await, kita menunggu respons dari server sebelum melanjutkan kode selanjutnya. Tanpa await, kode selanjutnya akan dieksekusi sebelum respons diterima, yang dapat menyebabkan penggunaan data yang belum siap (misalnya, nilai undefined atau error).
+
+3. Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?
+csrf_exempt digunakan untuk menonaktifkan pengecekan CSRF (Cross-Site Request Forgery) pada view tertentu. AJAX POST yang dilakukan dari JavaScript biasanya tidak secara otomatis menyertakan token CSRF, yang menyebabkan request tersebut ditolak oleh server. Dengan decorator csrf_exempt, kita mengizinkan request AJAX POST untuk diproses tanpa pengecekan token CSRF. Namun, ini harus digunakan dengan hati-hati karena dapat menimbulkan kerentanan keamanan.
+
+4. Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?
+Pembersihan data input di backend sangat penting untuk keamanan dan keandalan aplikasi. Jika hanya dilakukan di frontend, data dapat dengan mudah dimanipulasi oleh pengguna yang mengabaikan validasi frontend (misalnya dengan memodifikasi JavaScript di browser). Oleh karena itu, backend harus memverifikasi dan membersihkan data input untuk memastikan bahwa hanya data yang aman dan valid yang diproses oleh sistem. Ini melindungi aplikasi dari serangan seperti SQL injection, XSS, atau data yang rusak.
+
+5.  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+Pertama, Saya menambahkan error message pada login jadi saat ada user yang login dengan username atau password yang salah, atau belum buat akun, maka ada ada error message "Invalid username or password. Please try again.".
+
+Untuk melakukan pengambilan data produk menggunakan AJAX GET, langkah-langkahnya meliputi membuat view yang akan menangani request GET dan mengembalikan data produk dalam format JSON, hanya untuk produk yang dimiliki oleh pengguna yang sedang login. Setelah data produk berhasil diambil, frontend akan menampilkan data tersebut secara dinamis tanpa perlu me-refresh halaman. Kamu bisa menggunakan Django's JsonResponse untuk mengembalikan data. Selain itu, pastikan kamu menambahkan CSRF token pada request AJAX untuk keamanan. Path untuk view ini juga perlu ditambahkan ke dalam file urls.py.
+
+AJAX GET untuk Menampilkan Produk: Saya memodifikasi tampilan halaman produk sehingga produk ditampilkan secara dinamis menggunakan AJAX GET. Proses ini dimulai dengan mengganti kode template yang sebelumnya menggunakan {% for product in products %} dengan sebuah div placeholder (<div id="product_cards"></div>), di mana produk-produk nantinya akan dimuat secara asinkron. Saya membuat fungsi JavaScript yang bertugas untuk mengambil data produk dari server menggunakan AJAX GET. Hanya produk yang dimiliki oleh pengguna yang sedang login yang diambil. Fungsi ini kemudian menampilkan produk-produk tersebut dalam layout grid dengan desain pink yang sesuai dengan tema CutesyBoutique, dan memastikan pengalaman pengguna yang seamless tanpa reload halaman.
+
+AJAX POST untuk Menambahkan Produk: Saya menambahkan tombol di halaman yang ketika diklik, membuka modal berisi form untuk menambahkan produk baru. Tombol ini didesain dengan gaya pink dan animasi hover agar sesuai dengan tampilan CutesyBoutique. Form ini mengirimkan data produk baru ke server menggunakan AJAX POST. Di server, saya membuat view baru yang menangani permintaan POST ini. Pada view tersebut, data produk seperti nama, harga, deskripsi, ukuran, dan stok diambil dari form. Sebelum disimpan ke database, saya menggunakan strip_tags() untuk memastikan bahwa input pengguna bebas dari HTML tags yang berpotensi membahayakan.
+
+Validasi Data Produk: Pada model form yang digunakan untuk menambah produk, saya menambahkan metode clean untuk memvalidasi input. Sebagai contoh, fungsi clean_name dan clean_description digunakan untuk memverifikasi bahwa nama dan deskripsi produk yang diinput tidak mengandung tag HTML. Hal ini dilakukan untuk meningkatkan keamanan dan memastikan bahwa input yang diterima aman untuk disimpan ke database.
+
+Update Produk Secara Asinkron: Setelah produk baru berhasil ditambahkan melalui form modal, halaman utama diperbarui secara asinkron tanpa reload penuh menggunakan AJAX. Fungsi JavaScript yang menangani pengambilan data produk (refreshProducts()) dipanggil untuk memperbarui daftar produk pada halaman. Hal ini membuat pengalaman pengguna lebih dinamis karena mereka bisa melihat produk yang baru saja ditambahkan secara instan tanpa perlu melakukan refresh manual pada halaman.
+
+Path untuk View Tambah Produk: Untuk mendukung fitur ini, saya menambahkan path baru pada urls.py, yaitu /create-ajax/, yang mengarah ke view yang baru saya buat. View ini bertanggung jawab untuk menerima permintaan POST dan menambah produk baru ke database.
